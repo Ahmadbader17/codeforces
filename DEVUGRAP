@@ -1,0 +1,43 @@
+
+#include "stdc++.h"
+#define ll long long int
+using namespace std;
+
+
+int main()
+{
+
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r",stdin);
+freopen("output.txt","w",stdout);
+#endif
+	
+
+int t;
+    cin >> t;
+    while (t--)
+    {
+        long int n, k, total = 0, x;
+        cin >> n >> k;
+
+        for (long int i = 0; i < n; i++)
+        {
+            cin >> x;
+            if (x - min(x % k, k - x % k) != 0)
+            {
+                total += min(x % k, k - x % k);
+            }
+            else
+            {
+                total += (k - x % k);
+            }
+        }
+        cout << total << endl;
+    }
+
+    return 0;
+
+}
+
+
+
